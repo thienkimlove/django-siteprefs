@@ -3,21 +3,6 @@ from django.db.utils import IntegrityError
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import python_2_unicode_compatible
 
-from siteprefs.widgets import CKEditor
-
-
-class TextEditorField(models.TextField):
-
-    def formfield(self, **kwargs):
-        # Passing max_length to forms.CharField means that the value's length
-        # will be validated twice. This is considered acceptable since we want
-        # the value in the form field (to pass into widget for example).
-        defaults = {'max_length': self.max_length}
-        if not self.choices:
-            defaults['widget'] = CKEditor
-        defaults.update(kwargs)
-        return super().formfield(**defaults)
-
 
 @python_2_unicode_compatible
 class Preference(models.Model):

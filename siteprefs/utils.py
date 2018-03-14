@@ -6,8 +6,6 @@ from collections import OrderedDict
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from siteprefs.models import TextEditorField
-
 try:
     from django.utils.module_loading import import_module as import_module_
 except ImportError:

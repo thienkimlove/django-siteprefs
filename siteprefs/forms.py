@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import Textarea
 
-from siteprefs.models import Preference
+from .models import Preference
 
 
 class SpecialForm(forms.ModelForm):
