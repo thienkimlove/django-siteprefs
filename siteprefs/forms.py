@@ -9,5 +9,5 @@ class SpecialForm(forms.ModelForm):
         model = Preference
         fields = '__all__'
         widgets = {
-            'value': Textarea(attrs={'rows': 20, 'class' : 'editor'}),
+            'text': Textarea(attrs={'rows': 20, 'class' : 'editor'}),
         }

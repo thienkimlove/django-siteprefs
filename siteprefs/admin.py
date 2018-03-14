@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from siteprefs.forms import SpecialForm
+from .forms import SpecialForm
 from .settings import EXPOSE_MODEL_TO_ADMIN
 
 
