@@ -6,6 +6,8 @@ from collections import OrderedDict
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from siteprefs.models import TextEditorField
+
 try:
     from django.utils.module_loading import import_module as import_module_
 except ImportError:
@@ -108,7 +110,7 @@ def get_field_for_proxy(pref_proxy):
         int:  models.IntegerField,
         float: models.FloatField,
         datetime: models.DateTimeField,
-    }.get(type(pref_proxy.default), models.TextField)()
+    }.get(type(pref_proxy.default), TextEditorField)()
     update_field_from_proxy(field, pref_proxy)
     return field
 
