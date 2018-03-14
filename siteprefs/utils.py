@@ -110,7 +110,7 @@ def get_field_for_proxy(pref_proxy):
         int:  models.IntegerField,
         float: models.FloatField,
         datetime: models.DateTimeField,
-    }.get(type(pref_proxy.default), TextEditorField)()
+    }.get(type(pref_proxy.default), models.TextField)()
     update_field_from_proxy(field, pref_proxy)
     return field
 
